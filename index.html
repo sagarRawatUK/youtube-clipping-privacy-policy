@@ -96,12 +96,17 @@ agree to be bound by the
 Google handles your data.</p>
 
 <h2>3. What Google account access it asks for</h2>
-<p>Clip Watcher asks for one permission only:</p>
-<p><code>https://www.googleapis.com/auth/youtube.upload</code></p>
-<p>It uses this permission to upload video files to the YouTube channel you choose when you sign
-in. It does not ask for, and does not read, your channel details, your existing videos, comments,
-subscribers, viewing history, analytics, email address, contacts or any other Google account
-data.</p>
+<p>Clip Watcher asks for two permissions:</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/youtube.upload</code><br>
+  Used to upload video files to the YouTube channel you choose when you sign in.</li>
+  <li><code>https://www.googleapis.com/auth/youtube.readonly</code><br>
+  Used once, when you sign in, to read the name, handle and ID of the channel you chose. Clip
+  Watcher shows you this so you can see where clips will go, and uses it to refuse to upload to a
+  different channel.</li>
+</ul>
+<p>It does not read your existing videos, comments, subscribers, viewing history, analytics, email
+address, contacts or any other Google account data.</p>
 <p>You sign in on Google's own page in your web browser. Clip Watcher never sees or stores your
 Google password.</p>
 
@@ -122,7 +127,8 @@ to any third party.</p>
 <ul>
   <li>Sign-in tokens issued by Google, and the app's own client credentials, are kept in a folder
   in your home directory that only your user account on that computer can read. They are used only
-  to upload videos when you have turned uploading on.</li>
+  to upload videos when you have turned uploading on. The name, handle and ID of the channel you
+  signed in to are kept in the same folder.</li>
   <li>Recordings of the public live streams you chose to watch, and the clips cut from them.</li>
   <li>The public chat of those streams (public usernames and messages), read without signing in.
   It is used to find the moments when chat reacts, and a short excerpt is saved next to each clip
